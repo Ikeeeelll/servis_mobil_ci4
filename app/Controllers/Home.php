@@ -12,20 +12,42 @@ class Home extends BaseController
     $this->pemesananModel = new Mpemesanan();
 }
 
-   public function index(): string
+public function index()
 {
-    $servisModel = new \App\Models\Mservis();
-    $data['servis'] = $servisModel->findAll();
+    echo "<pre>";
 
-    // Load daftar mobil jika pelanggan sudah login
-    $data['mobil'] = [];
-    if (session()->get('loggedin') && session()->get('level') == 'pelanggan') {
-        $mobilModel = new \App\Models\Mmobil();
-        $data['mobil'] = $mobilModel->getMobilByPelanggan(session()->get('id_pelanggan'));
-    }
+    echo "ENVIRONMENT:\n";
+    var_dump(ENVIRONMENT);
 
-    return view('template/Beranda', $data);
+    echo "\nHOST:\n";
+    var_dump(env('database.default.hostname'));
+
+    echo "\nPORT:\n";
+    var_dump(env('database.default.port'));
+
+    echo "\nDATABASE:\n";
+    var_dump(env('database.default.database'));
+
+    echo "\nUSERNAME:\n";
+    var_dump(env('database.default.username'));
+
+    exit;
 }
+
+//    public function index(): string
+// {
+//     $servisModel = new \App\Models\Mservis();
+//     $data['servis'] = $servisModel->findAll();
+
+//     // Load daftar mobil jika pelanggan sudah login
+//     $data['mobil'] = [];
+//     if (session()->get('loggedin') && session()->get('level') == 'pelanggan') {
+//         $mobilModel = new \App\Models\Mmobil();
+//         $data['mobil'] = $mobilModel->getMobilByPelanggan(session()->get('id_pelanggan'));
+//     }
+
+//     return view('template/Beranda', $data);
+// }
 
 
     public function tentang(): string
