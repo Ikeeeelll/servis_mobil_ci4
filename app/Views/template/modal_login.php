@@ -33,7 +33,7 @@
     </div>
   </div>
 </div>
-<?= $this->include('template/registrasi'); ?>
+<?= $this->include('template/Registrasi'); ?>
 
 <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
