@@ -191,11 +191,15 @@ class Database extends Config
     {
         parent::__construct();
 
-        // Ensure that we always set the database group to 'tests' if
-        // we are currently running an automated test suite, so that
-        // we don't overwrite live data on accident.
-        if (ENVIRONMENT === 'testing') {
-            $this->defaultGroup = 'tests';
-        }
+    $this->default['hostname'] = env('database.default.hostname');
+    $this->default['username'] = env('database.default.username');
+    $this->default['password'] = env('database.default.password');
+    $this->default['database'] = env('database.default.database');
+    $this->default['DBDriver'] = env('database.default.DBDriver', 'MySQLi');
+    $this->default['port']     = (int) env('database.default.port', 3306);
+
+    if (ENVIRONMENT === 'testing') {
+        $this->defaultGroup = 'tests';
+    }
     }
 }
