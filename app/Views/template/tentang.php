@@ -89,7 +89,7 @@
                         <div class="dropdown-menu fade-down m-0">
                             <a href="<?= site_url('/Mobil') ?>" class="dropdown-item">Mobil Saya</a>
                             <a href="<?= site_url('/Home/profil') ?>" class="dropdown-item">Setting</a>
-                            <a href="<?= site_url('/theme/logout') ?>" class="dropdown-item">Logout</a>
+                            <a href="<?= site_url('/login/logout') ?>" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 <?php else: ?>
