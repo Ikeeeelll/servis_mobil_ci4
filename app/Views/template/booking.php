@@ -101,6 +101,7 @@
           <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a>
         <?php endif; ?>
       </div>
+    </div>
   </nav>
   <!-- Navbar End -->
   <!-- Booking Start -->
@@ -203,9 +204,7 @@
     </div> <!-- container -->
   </div> <!-- container-fluid -->
 
-  <!-- JavaScript Libraries -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript Libraries (loaded once at bottom) -->
 
   <!-- SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
