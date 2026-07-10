@@ -11,7 +11,7 @@ class Admin extends BaseController
 
     public function __construct()
     {
-        $this->AdminModel = new MAdmin();
+        $this->AdminModel = new Madmin();
         helper(['form', 'url']);
     }
 
