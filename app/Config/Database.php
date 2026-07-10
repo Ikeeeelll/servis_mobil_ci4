@@ -189,15 +189,14 @@ class Database extends Config
 
     public function __construct()
     {
-          parent::__construct();
+        parent::__construct();
 
-    echo '<pre>';
-    var_dump(env('database.default.hostname'));
-    var_dump(env('database.default.database'));
-    var_dump(env('database.default.username'));
-    var_dump(env('database.default.password'));
-    var_dump(env('database.default.port'));
-    exit;
+    $this->default['hostname'] = env('database.default.hostname');
+    $this->default['username'] = env('database.default.username');
+    $this->default['password'] = env('database.default.password');
+    $this->default['database'] = env('database.default.database');
+    $this->default['DBDriver'] = env('database.default.DBDriver', 'MySQLi');
+    $this->default['port']     = (int) env('database.default.port', 3306);
 
     if (ENVIRONMENT === 'testing') {
         $this->defaultGroup = 'tests';
