@@ -191,14 +191,13 @@ class Database extends Config
     {
         parent::__construct();
 
-        // Prioritaskan Railway env vars (MYSQLHOST, dll.) karena nama dengan titik
-        // tidak bisa diinjeksi sebagai env var di Linux.
-        // Fallback ke CI4 env() untuk development lokal.
-        $this->default['hostname'] = getenv('MYSQLHOST')     ?: env('database.default.hostname', 'localhost');
-        $this->default['username'] = getenv('MYSQLUSER')     ?: env('database.default.username', 'root');
-        $this->default['password'] = getenv('MYSQLPASSWORD') ?: env('database.default.password', '');
-        $this->default['database'] = getenv('MYSQL_DATABASE') ?: env('database.default.database', '');
-        $this->default['port']     = (int) (getenv('MYSQLPORT') ?: env('database.default.port', 3306));
+        // Gunakan $_ENV karena php -S built-in server tidak support getenv().
+        // $_ENV sudah terisi oleh Railway. Fallback ke CI4 env() untuk dev lokal.
+        $this->default['hostname'] = $_ENV['MYSQLHOST']      ?? env('database.default.hostname', 'localhost');
+        $this->default['username'] = $_ENV['MYSQLUSER']      ?? env('database.default.username', 'root');
+        $this->default['password'] = $_ENV['MYSQLPASSWORD']  ?? env('database.default.password', '');
+        $this->default['database'] = $_ENV['MYSQL_DATABASE'] ?? env('database.default.database', '');
+        $this->default['port']     = (int) ($_ENV['MYSQLPORT'] ?? env('database.default.port', 3306));
         $this->default['DBDriver'] = 'MySQLi';
 
         if (ENVIRONMENT === 'testing') {
