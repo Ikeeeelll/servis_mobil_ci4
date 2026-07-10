@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\MAdmin;
+use App\Models\Madmin;
 use CodeIgniter\Controller;
 
 class Admin extends BaseController
