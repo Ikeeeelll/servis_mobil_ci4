@@ -191,15 +191,18 @@ class Database extends Config
     {
         parent::__construct();
 
-    $this->default['hostname'] = env('database.default.hostname');
-    $this->default['username'] = env('database.default.username');
-    $this->default['password'] = env('database.default.password');
-    $this->default['database'] = env('database.default.database');
-    $this->default['DBDriver'] = env('database.default.DBDriver', 'MySQLi');
-    $this->default['port']     = (int) env('database.default.port', 3306);
+        // Prioritaskan Railway env vars (MYSQLHOST, dll.) karena nama dengan titik
+        // tidak bisa diinjeksi sebagai env var di Linux.
+        // Fallback ke CI4 env() untuk development lokal.
+        $this->default['hostname'] = getenv('MYSQLHOST')     ?: env('database.default.hostname', 'localhost');
+        $this->default['username'] = getenv('MYSQLUSER')     ?: env('database.default.username', 'root');
+        $this->default['password'] = getenv('MYSQLPASSWORD') ?: env('database.default.password', '');
+        $this->default['database'] = getenv('MYSQL_DATABASE') ?: env('database.default.database', '');
+        $this->default['port']     = (int) (getenv('MYSQLPORT') ?: env('database.default.port', 3306));
+        $this->default['DBDriver'] = 'MySQLi';
 
-    if (ENVIRONMENT === 'testing') {
-        $this->defaultGroup = 'tests';
-    }
+        if (ENVIRONMENT === 'testing') {
+            $this->defaultGroup = 'tests';
+        }
     }
 }
