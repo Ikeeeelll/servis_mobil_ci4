@@ -181,7 +181,7 @@ public function updateData()
     $dataSparepart = $this->SparepartModel->findAll();
     $username = session()->get('username');
     $data = [
-        'title' => 'Laporan Data Pelanggan',
+        'title' => 'Laporan Data Sparepart',
         'dataSparepart' => $dataSparepart,
         'username' => session()->get('nama'),
     ];
