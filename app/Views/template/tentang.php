@@ -96,6 +96,7 @@
                     <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a>
                 <?php endif; ?>
             </div>
+        </div>
     </nav>
 
     <!-- About Start -->

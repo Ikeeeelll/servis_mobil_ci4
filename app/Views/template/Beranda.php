@@ -107,6 +107,7 @@
                     <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a>
                 <?php endif; ?>
             </div>
+        </div>
     </nav>
     <!-- Navbar End -->
 
@@ -450,8 +451,6 @@
 
     <!-- Template Javascript -->
     <script src="/theme/js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
