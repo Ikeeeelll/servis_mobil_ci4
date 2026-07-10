@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <div class="col-lg-3 col-12">
+        <div class="col-lg-3 col-6">
             <div class="small-box bg-purple shadow">
                 <div class="inner">
                     <h3><?= $totalPelanggan ?></h3>
