@@ -34,4 +34,3 @@ EXPOSE 8080
 CMD php -S 0.0.0.0:${PORT:-8080} -t public
 
 
-mysql.railway.internal  3306  root  dlWWCDyLrHsNLMWAYrsoEqlLKQbiaSmC  
