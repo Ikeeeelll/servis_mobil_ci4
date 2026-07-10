@@ -337,13 +337,13 @@
                                             <!-- Tanggal Servis -->
                                             <div class="col-12 col-sm-6">
                                                 <label class="form-label fw-semibold">Tanggal Servis</label>
-                                                <input type="date" class="form-control border-secondary" id="tanggal_servis" name="tanggal_servis" required>
+                                                <input type="date" class="form-control border-secondary" id="tanggal_servis" name="tanggal_servis" min="<?= date('Y-m-d') ?>" required>
                                             </div>
 
                                             <!-- Jam Servis -->
                                             <div class="col-12 col-sm-6">
                                                 <label class="form-label fw-semibold">Jam Servis</label>
-                                                <input type="time" class="form-control border-secondary" id="jam_servis" name="jam_servis" required>
+                                                <input type="time" class="form-control border-secondary" id="jam_servis" name="jam_servis" min="08:00" max="16:00" required>
                                             </div>
 
                                             <!-- Keluhan -->
@@ -373,60 +373,7 @@
         </div>
     </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        $(document).ready(function() {
-            $('#formBooking').submit(function(e) {
-                e.preventDefault(); // penting banget!
-
-                $.ajax({
-                    url: "<?= site_url('/Booking/simpan') ?>",
-                    type: "POST",
-                    data: $(this).serialize(),
-                    dataType: "json",
-                    success: function(res) {
-                        if (res.success) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Berhasil',
-                                text: res.message
-                            });
-                            $('#formBooking')[0].reset();
-                        } else if (res.redirect) {
-                            Swal.fire({
-                                icon: 'warning',
-                                title: 'Login Diperlukan',
-                                text: res.message,
-                                confirmButtonText: 'Login Sekarang'
-                            }).then(() => {
-                                var modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
-                                modalLogin.show();
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Gagal',
-                                text: res.message || 'Terjadi kesalahan saat menyimpan data.'
-                            });
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(error);
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Kesalahan Server',
-                            text: 'Terjadi kesalahan pada server.'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -505,6 +452,92 @@
     <script src="/theme/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function() {
+            $('#formBooking').submit(function(e) {
+                e.preventDefault(); // penting banget!
+
+                $.ajax({
+                    url: "<?= site_url('/Booking/simpan') ?>",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    dataType: "json",
+                    success: function(res) {
+                        if (res.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Berhasil',
+                                text: res.message
+                            });
+                            $('#formBooking')[0].reset();
+                        } else if (res.redirect) {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Login Diperlukan',
+                                text: res.message,
+                                confirmButtonText: 'Login Sekarang'
+                            }).then(() => {
+                                var modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));
+                                modalLogin.show();
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Gagal',
+                                text: res.message || 'Terjadi kesalahan saat menyimpan data.'
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Kesalahan Server',
+                            text: 'Terjadi kesalahan pada server.'
+                        });
+                    }
+                });
+            });
+
+            // Validasi Hari Jumat
+            $('#tanggal_servis').on('change', function() {
+                let dateVal = $(this).val();
+                if (dateVal) {
+                    let date = new Date(dateVal);
+                    if (date.getDay() === 5) { // 5 adalah hari Jumat
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Hari Libur',
+                            text: 'Maaf, hari Jumat bengkel kami libur. Silakan pilih hari lain.'
+                        });
+                        $(this).val('');
+                    }
+                }
+            });
+
+            // Validasi Jam 08:00 - 16:00
+            $('#jam_servis').on('change', function() {
+                let timeVal = $(this).val();
+                if (timeVal) {
+                    let parts = timeVal.split(':');
+                    let hours = parseInt(parts[0], 10);
+                    let minutes = parseInt(parts[1], 10);
+                    
+                    if (hours < 8 || hours > 16 || (hours === 16 && minutes > 0)) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Jam Tidak Valid',
+                            text: 'Jam servis hanya tersedia dari pukul 08:00 hingga 16:00.'
+                        });
+                        $(this).val('');
+                    }
+                }
+            });
+        });
+    </script>
 
     <?= $this->include('template/modal_login'); ?>
     <script>
