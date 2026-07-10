@@ -12,7 +12,10 @@ class Login extends Controller
     {
         
         if (!session()->get('loggedin')) {
-            return view('template/Beranda');
+            $servisModel = new \App\Models\Mservis();
+            $data['servis'] = $servisModel->findAll();
+            $data['mobil'] = [];
+            return view('template/Beranda', $data);
         } else {
             $level = session()->get('level');
             return $this->redirectByLevel($level);
