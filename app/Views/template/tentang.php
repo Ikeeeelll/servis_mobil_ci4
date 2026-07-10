@@ -8,22 +8,22 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <!-- Favicon -->
-    <link href="/login/img/favicon.ico" rel="icon">
+    <link href="/theme/img/favicon.ico" rel="icon">
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="/login/https://fonts.googleapis.com">
-    <link rel="preconnect" href="/login/https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="/theme/https://fonts.googleapis.com">
+    <link rel="preconnect" href="/theme/https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
-    <link href="/login/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="/login/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/login/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="/theme/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/theme/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/theme/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="/login/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template Stylesheet -->
-    <link href="/login/css/style.css" rel="stylesheet">
+    <link href="/theme/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -62,7 +62,7 @@
     <!-- Topbar End -->
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="/login/index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="/theme/index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary"><i class="fa fa-car me-3"></i>Utama Service Station</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -89,7 +89,7 @@
                         <div class="dropdown-menu fade-down m-0">
                             <a href="<?= site_url('/Mobil') ?>" class="dropdown-item">Mobil Saya</a>
                             <a href="<?= site_url('/Home/profil') ?>" class="dropdown-item">Setting</a>
-                            <a href="<?= site_url('/Login/logout') ?>" class="dropdown-item">Logout</a>
+                            <a href="<?= site_url('/theme/logout') ?>" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 <?php else: ?>
@@ -104,7 +104,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 pt-4" style="min-height: 400px;">
                     <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
-                        <img class="position-absolute img-fluid w-100 h-100" src="/login/img/about.jpg" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="/theme/img/about.jpg" style="object-fit: cover;" alt="">
                         <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5" style="background: rgba(0, 0, 0, .08);">
                             <h1 class="display-4 text-white mb-0">40 <span class="fs-4">Tahun</span></h1>
                             <h4 class="text-white">Pengalaman</h4>
@@ -141,7 +141,7 @@
                         <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
                         </div>
                         <!-- </div>
-                    <a href="/login/" class="btn btn-primary py-3 px-5">Selengkapnya<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="/theme/" class="btn btn-primary py-3 px-5">Selengkapnya<i class="fa fa-arrow-right ms-3"></i></a>
                 </div> -->
                     </div>
                 </div>
@@ -211,21 +211,21 @@
     </div>
     <!-- Footer End -->
     <!-- Back to Top -->
-    <a href="/login/#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="/theme/#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/login/lib/wow/wow.min.js"></script>
-    <script src="/login/lib/easing/easing.min.js"></script>
-    <script src="/login/lib/waypoints/waypoints.min.js"></script>
-    <script src="/login/lib/counterup/counterup.min.js"></script>
-    <script src="/login/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="/login/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="/login/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="/login/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="/theme/lib/wow/wow.min.js"></script>
+    <script src="/theme/lib/easing/easing.min.js"></script>
+    <script src="/theme/lib/waypoints/waypoints.min.js"></script>
+    <script src="/theme/lib/counterup/counterup.min.js"></script>
+    <script src="/theme/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/theme/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="/theme/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/theme/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="/login/js/main.js"></script>
+    <script src="/theme/js/main.js"></script>
 
     <?= $this->include('template/modal_login'); ?>
 

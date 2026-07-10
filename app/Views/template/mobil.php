@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     
     <!-- Favicon -->
-    <link href="/login/img/logouss.png" rel="icon">
+    <link href="/theme/img/logouss.png" rel="icon">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
-    <link href="/login/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="/login/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/login/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="/theme/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/theme/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/theme/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="/login/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template Stylesheet -->
-    <link href="/login/css/style.css" rel="stylesheet">
+    <link href="/theme/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -74,7 +74,7 @@
                         <div class="dropdown-menu fade-down m-0">
                             <a href="<?= site_url('/Mobil') ?>" class="dropdown-item active">Mobil Saya</a>
                             <a href="<?= site_url('/Home/profil') ?>" class="dropdown-item">Setting</a>
-                            <a href="<?= site_url('/Login/logout') ?>" class="dropdown-item">Logout</a>
+                            <a href="<?= site_url('/theme/logout') ?>" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 <?php else: ?>
@@ -86,7 +86,7 @@
     <!-- Navbar End -->
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(/login/img/carousel-bg-1.jpg);">
+    <div class="container-fluid page-header mb-5 p-0" style="background-image: url(/theme/img/carousel-bg-1.jpg);">
         <div class="container-fluid page-header-inner py-5">
             <div class="container text-center">
                 <h1 class="display-3 text-white mb-3 animated slideInDown">Mobil Saya</h1>
@@ -242,8 +242,8 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/login/lib/wow/wow.min.js"></script>
-    <script src="/login/js/main.js"></script>
+    <script src="/theme/lib/wow/wow.min.js"></script>
+    <script src="/theme/js/main.js"></script>
     <script>
     const dataMobil = {
         "Toyota": {
