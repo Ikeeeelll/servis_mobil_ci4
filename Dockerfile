@@ -31,9 +31,9 @@ RUN chmod -R 777 writable
 EXPOSE 8080
 
 # # CMD php spark serve --host=0.0.0.0 --port=${PORT:-8080}
-# CMD php -S 0.0.0.0:${PORT:-8080} -t public
+CMD php -S 0.0.0.0:${PORT:-8080} -t public
 
-EXPOSE 8080
+# EXPOSE 8080
 
-CMD ["sh", "-c", "echo PORT=$PORT && php spark serve --host=0.0.0.0 --port=${PORT:-8080}"]
+# CMD ["sh", "-c", "echo PORT=$PORT && php spark serve --host=0.0.0.0 --port=${PORT:-8080}"]
 
