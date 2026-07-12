@@ -5,16 +5,16 @@
 
     <!-- HEADER -->
 <div class="header mb-4 position-relative">
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
         <!-- LOGO KIRI -->
-        <div class="logo-container" style="margin-left: 40px;">
+        <div class="logo-container">
             <img src="<?= base_url('assets/dist/img/logouss.png') ?>" 
                  alt="Logo" 
-                 style="width: 90px; height: auto;">
+                 style="width: 70px; height: auto;">
         </div>
 
         <!-- TEKS HEADER (TENGAH) -->
-        <div class="text-center flex-grow-1" style="margin-right: 90px;">
+        <div class="text-center flex-grow-1">
             <h3 class="fw-bold mb-1 text-uppercase">UTAMA SERVICE STATION</h3>
             <p style="font-size: 14px; margin-bottom: 0;">
                 Jl. S. Parman No.156 Padang
@@ -23,8 +23,7 @@
                 Telp: (0751) 7054654 / 7052123
             </p>
 
-            <!-- Jarak tambahan antara telepon dan judul laporan -->
-            <h4 class="fw-bold text-decoration-underline mt-3" style="font-size: 16px; margin-top: 50px;">
+            <h4 class="fw-bold text-decoration-underline mt-3" style="font-size: 16px;">
                 LAPORAN PEMBELIAN
             </h4>
         </div>
@@ -104,6 +103,7 @@
 
 
     <!-- TABEL DATA PEMBELIAN -->
+    <div class="table-responsive">
     <table class="table table-bordered table-striped align-middle">
         <thead class="bg-dark text-white text-center">
             <tr>
@@ -145,6 +145,7 @@
             <?php endif; ?>
         </tbody>
     </table>
+    </div>
 
     <!-- BAGIAN TANDA TANGAN -->
     <div class="mt-5" style="width: 40%; margin-left: auto; text-align: center;">

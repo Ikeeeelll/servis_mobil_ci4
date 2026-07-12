@@ -5,20 +5,20 @@
 
     <!-- HEADER -->
     <div class="header mb-4 position-relative">
-        <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
 
             <!-- LOGO -->
-            <div class="logo-container" style="margin-left: 40px;">
-                <img src="<?= base_url('assets/dist/img/logouss.png') ?>" alt="Logo" style="width: 90px; height: auto;">
+            <div class="logo-container">
+                <img src="<?= base_url('assets/dist/img/logouss.png') ?>" alt="Logo" style="width: 70px; height: auto;">
             </div>
 
             <!-- TEKS HEADER -->
-            <div class="text-center flex-grow-1" style="margin-right: 90px;">
+            <div class="text-center flex-grow-1">
                 <h3 class="fw-bold mb-1 text-uppercase">UTAMA SERVICE STATION</h3>
                 <p style="font-size: 14px; margin-bottom: 0;">Jl. S. Parman No.156 Padang</p>
                 <p style="font-size: 13px; margin-bottom: 0;">Telp: (0751) 7054654 / 7052123</p>
 
-                <h4 class="fw-bold text-decoration-underline mt-3" style="font-size: 16px; margin-top: 50px;">
+                <h4 class="fw-bold text-decoration-underline mt-3" style="font-size: 16px;">
                     LAPORAN DATA SERVIS
                 </h4>
             </div>
@@ -103,6 +103,7 @@
     </style>
 
     <!-- TABEL PEMBAYARAN -->
+    <div class="table-responsive">
     <table class="table table-bordered table-striped">
         <thead class="bg-header">
             <tr>
@@ -163,6 +164,7 @@
             </tr>
         </tbody>
     </table>
+    </div>
 
     <!-- TANDA TANGAN -->
     <div class="mt-5" style="width: 40%; margin-left: auto; text-align: center;">
