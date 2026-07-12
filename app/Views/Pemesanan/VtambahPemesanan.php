@@ -42,7 +42,18 @@
 
                     <div class="form-group">
                         <label for="jam_servis">Jam Servis</label>
-                        <input type="time" name="jam_servis" id="jam_servis" class="form-control" min="08:00" max="16:00" required>
+                        <select name="jam_servis" id="jam_servis" class="form-control" required>
+                            <option value="">-- Pilih Jam --</option>
+                            <option value="08:00">08:00</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="13:00">13:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="15:00">15:00</option>
+                            <option value="16:00">16:00</option>
+                        </select>
                     </div>
 
                     <div class="form-group" id="wrapperMobil" style="display:none">
@@ -326,24 +337,7 @@
         }
     });
 
-    // Validasi Jam 08:00 - 16:00
-    $('#jam_servis').on('change', function() {
-        let timeVal = $(this).val();
-        if (timeVal) {
-            let parts = timeVal.split(':');
-            let hours = parseInt(parts[0], 10);
-            let minutes = parseInt(parts[1], 10);
-            
-            if (hours < 8 || hours > 16 || (hours === 16 && minutes > 0)) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Jam Tidak Valid',
-                    text: 'Jam servis hanya tersedia dari pukul 08:00 hingga 16:00.'
-                });
-                $(this).val('');
-            }
-        }
-    });
+
 </script>
 
 <style>
