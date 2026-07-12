@@ -160,7 +160,8 @@ class Pemesanan extends BaseController
                 ->where('jam_servis', $jam_servis)
                 ->countAllResults();
 
-            if ($jumlahSlot >= $kapasitasTeknisi) {
+            // Admin bebas bypass limit, selain admin dibatasi
+            if (session()->get('level') !== 'admin' && $jumlahSlot >= $kapasitasTeknisi) {
                 return $this->response->setJSON([
                     'success' => false,
                     'message' => 'Slot waktu ini sudah penuh. Silakan pilih waktu lain.'

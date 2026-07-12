@@ -42,18 +42,7 @@
 
                     <div class="form-group">
                         <label for="jam_servis">Jam Servis</label>
-                        <select name="jam_servis" id="jam_servis" class="form-control" required>
-                            <option value="">-- Pilih Jam --</option>
-                            <option value="08:00">08:00</option>
-                            <option value="09:00">09:00</option>
-                            <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="13:00">13:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
-                        </select>
+                        <input type="time" name="jam_servis" id="jam_servis" class="form-control" required>
                     </div>
 
                     <div class="form-group" id="wrapperMobil" style="display:none">

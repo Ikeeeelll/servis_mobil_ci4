@@ -175,7 +175,7 @@
                   <div class="col-12 col-sm-6">
                     <label class="form-label fw-semibold">Jam Servis</label>
                     <select class="form-select border-secondary" id="jam_servis" name="jam_servis" required>
-                      <option value="">-- Pilih Jam --</option>
+                      <option value=""></option>
                       <option value="08:00">08:00</option>
                       <option value="09:00">09:00</option>
                       <option value="10:00">10:00</option>
