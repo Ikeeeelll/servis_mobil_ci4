@@ -132,7 +132,7 @@
                                         Perbaikan Mobil Berkualitas</h1>
                                     <!-- <a href="/theme/" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a> -->
                                 </div>
-                                <div class="col-8 col-lg-5 mx-auto mx-lg-0 d-flex animated zoomIn">
+                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                     <img class="img-fluid" src="/theme/img/carousel-1.png" alt="">
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
                                         Perbaikan Mobil Berkualitas</h1>
                                     <!-- <a href="/theme/" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a> -->
                                 </div>
-                                <div class="col-8 col-lg-5 mx-auto mx-lg-0 d-flex animated zoomIn">
+                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                     <img class="img-fluid" src="/theme/img/carousel-2.png" alt="">
                                 </div>
                             </div>
@@ -342,7 +342,8 @@
                                                 <?php if (session()->get('loggedin') && !empty($mobil ?? [])): ?>
                                                     <?php foreach (($mobil ?? []) as $m): ?>
                                                         <option value="<?= $m['id_mobil'] ?>"><?= $m['no_polisi'] ?> -
-                                                            <?= $m['merk'] ?>         <?= $m['tipe'] ?> (<?= $m['jenis'] ?>)</option>
+                                                            <?= $m['merk'] ?>         <?= $m['tipe'] ?> (<?= $m['jenis'] ?>)
+                                                        </option>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
                                             </select>
