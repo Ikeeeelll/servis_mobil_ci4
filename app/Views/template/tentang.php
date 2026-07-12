@@ -12,7 +12,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="/theme/https://fonts.googleapis.com">
     <link rel="preconnect" href="/theme/https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -28,7 +29,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -36,7 +38,7 @@
     <!-- Spinner End -->
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-flex flex-column flex-lg-row">
+        <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
@@ -53,8 +55,11 @@
                     <small>(0751) 7054654</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1"
+                        href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0"
+                        href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -80,7 +85,7 @@
                         <a href="<?= site_url('/Home/status') ?>" class="dropdown-item">Status Servis</a>
                         <a href="<?= site_url('/Home/layanan') ?>" class="dropdown-item">Jenis Servis</a>
                     </div>
-                 </div>
+                </div>
                 <?php if (session()->get('loggedin')): ?>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -105,8 +110,10 @@
             <div class="row g-5">
                 <div class="col-lg-6 pt-4" style="min-height: 400px;">
                     <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
-                        <img class="position-absolute img-fluid w-100 h-100" src="/theme/img/about.jpg" style="object-fit: cover;" alt="">
-                        <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5" style="background: rgba(0, 0, 0, .08);">
+                        <img class="position-absolute img-fluid w-100 h-100" src="/theme/img/about.jpg"
+                            style="object-fit: cover;" alt="">
+                        <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5"
+                            style="background: rgba(0, 0, 0, .08);">
                             <h1 class="display-4 text-white mb-0">40 <span class="fs-4">Tahun</span></h1>
                             <h4 class="text-white">Pengalaman</h4>
                         </div>
@@ -114,28 +121,38 @@
                 </div>
                 <div class="col-lg-6">
                     <h6 class="text-primary text-uppercase">// Tentang Kami //</h6>
-                    <h1 class="mb-4"><span class="text-primary">Utama Service station</span> Adalah Tempat Terbaik Untuk Perawatan Mobil Anda</h1>
-                    <p class="mb-4">Utama Service Station adalah bengkel perawatan dan perbaikan mobil profesional yang berkomitmen memberikan layanan terbaik bagi setiap pelanggan. Dengan dukungan teknisi berpengalaman serta peralatan modern, kami memastikan kendaraan Anda selalu dalam kondisi optimal, aman, dan nyaman digunakan. Kami selalu mengutamakan kejujuran, ketepatan waktu, serta kualitas dalam setiap pengerjaan.</p>
+                    <h1 class="mb-4"><span class="text-primary">Utama Service station</span> Adalah Tempat Terbaik Untuk
+                        Perawatan Mobil Anda</h1>
+                    <p class="mb-4">Utama Service Station adalah bengkel perawatan dan perbaikan mobil profesional yang
+                        berkomitmen memberikan layanan terbaik bagi setiap pelanggan. Dengan dukungan teknisi
+                        berpengalaman serta peralatan modern, kami memastikan kendaraan Anda selalu dalam kondisi
+                        optimal, aman, dan nyaman digunakan. Kami selalu mengutamakan kejujuran, ketepatan waktu, serta
+                        kualitas dalam setiap pengerjaan.</p>
                     <div class="row g-4 mb-3 pb-3">
                         <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
                             <div class="d-flex">
-                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
+                                    style="width: 45px; height: 45px;">
                                     <span class="fw-bold text-secondary">01</span>
                                 </div>
                                 <div class="ps-3">
                                     <h6>Profesional & Berpengalaman</h6>
-                                    <span>Tim mekanik kami tersertifikasi dan memiliki pengalaman dalam menangani berbagai jenis kendaraan, sehingga setiap layanan dilakukan dengan teliti dan tepat.</span>
+                                    <span>Tim mekanik kami tersertifikasi dan memiliki pengalaman dalam menangani
+                                        berbagai jenis kendaraan, sehingga setiap layanan dilakukan dengan teliti dan
+                                        tepat.</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
                             <div class="d-flex">
-                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
+                                    style="width: 45px; height: 45px;">
                                     <span class="fw-bold text-secondary">02</span>
                                 </div>
                                 <div class="ps-3">
                                     <h6>Pusat Servis Berkualitas</h6>
-                                    <span>Fasilitas servis kami dilengkapi dengan peralatan mutakhir untuk memastikan setiap perawatan dilakukan sesuai standar kualitas terbaik.</span>
+                                    <span>Fasilitas servis kami dilengkapi dengan peralatan mutakhir untuk memastikan
+                                        setiap perawatan dilakukan sesuai standar kualitas terbaik.</span>
                                 </div>
                             </div>
                         </div>
@@ -162,8 +179,11 @@
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. S Parman No. 156 - 164 Padang</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(0751) 7054654</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 

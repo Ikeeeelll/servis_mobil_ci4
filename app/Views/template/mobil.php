@@ -5,13 +5,14 @@
     <meta charset="utf-8">
     <title>Utama Service Station - Mobil Saya</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
+
     <!-- Favicon -->
     <link href="/theme/img/logouss.png" rel="icon">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -29,7 +30,7 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-flex flex-column flex-lg-row">
+        <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
@@ -109,11 +110,12 @@
                     <div class="bg-light p-5 rounded">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h2>Daftar Mobil</h2>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTambahKendaraan">
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalTambahKendaraan">
                                 <i class="fa fa-plus me-2"></i> Tambah Mobil
                             </button>
                         </div>
-                        
+
                         <?php if (session()->getFlashdata('success')): ?>
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <?= session()->getFlashdata('success') ?>
@@ -142,7 +144,8 @@
                                 </thead>
                                 <tbody>
                                     <?php if (!empty($mobil)): ?>
-                                        <?php $no = 1; foreach ($mobil as $m): ?>
+                                        <?php $no = 1;
+                                        foreach ($mobil as $m): ?>
                                             <tr class="align-middle text-center">
                                                 <td><?= $no++ ?></td>
                                                 <td class="fw-bold"><?= $m['no_polisi'] ?></td>
@@ -151,7 +154,9 @@
                                                 <td><?= $m['jenis'] ?: '-' ?></td>
                                                 <td><?= $m['warna'] ?: '-' ?></td>
                                                 <td>
-                                                    <a href="<?= site_url('/Mobil/hapus/' . $m['id_mobil']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus mobil ini?');">
+                                                    <a href="<?= site_url('/Mobil/hapus/' . $m['id_mobil']) ?>"
+                                                        class="btn btn-sm btn-danger"
+                                                        onclick="return confirm('Apakah Anda yakin ingin menghapus mobil ini?');">
                                                         <i class="fa fa-trash"></i> Hapus
                                                     </a>
                                                 </td>
@@ -159,7 +164,8 @@
                                         <?php endforeach; ?>
                                     <?php else: ?>
                                         <tr>
-                                            <td colspan="6" class="text-center py-4">Belum ada mobil yang ditambahkan. Silakan tambah mobil.</td>
+                                            <td colspan="6" class="text-center py-4">Belum ada mobil yang ditambahkan.
+                                                Silakan tambah mobil.</td>
                                         </tr>
                                     <?php endif; ?>
                                 </tbody>
@@ -179,12 +185,14 @@
                 <form action="<?= site_url('/Mobil/tambah') ?>" method="post">
                     <div class="modal-header bg-primary text-white">
                         <h5 class="modal-title text-white">Tambah Mobil Baru</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
                             <label class="form-label">No Polisi (Plat Nomor) <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="no_polisi" placeholder="Contoh: BA 1234 XY" required>
+                            <input type="text" class="form-control" name="no_polisi" placeholder="Contoh: BA 1234 XY"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Merk Kendaraan <span class="text-danger">*</span></label>
@@ -200,7 +208,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Jenis Kendaraan <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control bg-light" name="jenis" id="jenis" readonly required placeholder="Jenis akan terisi otomatis">
+                            <input type="text" class="form-control bg-light" name="jenis" id="jenis" readonly required
+                                placeholder="Jenis akan terisi otomatis">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Warna <span class="text-danger">*</span></label>
@@ -245,64 +254,65 @@
     <script src="/theme/lib/wow/wow.min.js"></script>
     <script src="/theme/js/main.js"></script>
     <script>
-    const dataMobil = {
-        "Toyota": {
-            "Avanza": "Minibus", "Innova": "Minibus", "Alphard": "Minibus", "Rush": "SUV", "Fortuner": "SUV", "Yaris": "Hatchback", "Agya": "Hatchback", "Calya": "Minibus", "Vios": "Sedan", "Camry": "Sedan", "Hilux": "Pick Up"
-        },
-        "Honda": {
-            "Brio": "Hatchback", "Jazz": "Hatchback", "HR-V": "SUV", "CR-V": "SUV", "BR-V": "SUV", "Mobilio": "Minibus", "Civic": "Sedan", "City": "Sedan", "Accord": "Sedan"
-        },
-        "Daihatsu": {
-            "Xenia": "Minibus", "Terios": "SUV", "Ayla": "Hatchback", "Sigra": "Minibus", "Sirion": "Hatchback", "Rocky": "SUV", "Gran Max": "Pick Up", "Luxio": "Minibus"
-        },
-        "Suzuki": {
-            "Ertiga": "Minibus", "XL7": "SUV", "Ignis": "Hatchback", "Baleno": "Hatchback", "Carry": "Pick Up", "APV": "Minibus"
-        },
-        "Mitsubishi": {
-            "Xpander": "Minibus", "Xpander Cross": "SUV", "Pajero Sport": "SUV", "Outlander": "SUV", "Mirage": "Hatchback", "L300": "Pick Up", "Triton": "Pick Up"
-        },
-        "Nissan": {
-            "Livina": "Minibus", "X-Trail": "SUV", "Kicks": "SUV", "Magnite": "SUV", "Serena": "Minibus", "March": "Hatchback"
-        },
-        "Lainnya": {
-            "Lainnya": "Lainnya"
-        }
-    };
-
-    $(document).ready(function() {
-        // Populate Merk
-        $.each(dataMobil, function(merk, types) {
-            $('#merk').append(new Option(merk, merk));
-        });
-
-        // On Merk Change
-        $('#merk').change(function() {
-            let selectedMerk = $(this).val();
-            let tipeSelect = $('#tipe');
-            let jenisInput = $('#jenis');
-            
-            tipeSelect.empty().append(new Option("-- Pilih Tipe --", ""));
-            jenisInput.val('');
-            
-            if (selectedMerk && dataMobil[selectedMerk]) {
-                $.each(dataMobil[selectedMerk], function(tipe, jenis) {
-                    tipeSelect.append(new Option(tipe, tipe));
-                });
+        const dataMobil = {
+            "Toyota": {
+                "Avanza": "Minibus", "Innova": "Minibus", "Alphard": "Minibus", "Rush": "SUV", "Fortuner": "SUV", "Yaris": "Hatchback", "Agya": "Hatchback", "Calya": "Minibus", "Vios": "Sedan", "Camry": "Sedan", "Hilux": "Pick Up"
+            },
+            "Honda": {
+                "Brio": "Hatchback", "Jazz": "Hatchback", "HR-V": "SUV", "CR-V": "SUV", "BR-V": "SUV", "Mobilio": "Minibus", "Civic": "Sedan", "City": "Sedan", "Accord": "Sedan"
+            },
+            "Daihatsu": {
+                "Xenia": "Minibus", "Terios": "SUV", "Ayla": "Hatchback", "Sigra": "Minibus", "Sirion": "Hatchback", "Rocky": "SUV", "Gran Max": "Pick Up", "Luxio": "Minibus"
+            },
+            "Suzuki": {
+                "Ertiga": "Minibus", "XL7": "SUV", "Ignis": "Hatchback", "Baleno": "Hatchback", "Carry": "Pick Up", "APV": "Minibus"
+            },
+            "Mitsubishi": {
+                "Xpander": "Minibus", "Xpander Cross": "SUV", "Pajero Sport": "SUV", "Outlander": "SUV", "Mirage": "Hatchback", "L300": "Pick Up", "Triton": "Pick Up"
+            },
+            "Nissan": {
+                "Livina": "Minibus", "X-Trail": "SUV", "Kicks": "SUV", "Magnite": "SUV", "Serena": "Minibus", "March": "Hatchback"
+            },
+            "Lainnya": {
+                "Lainnya": "Lainnya"
             }
-        });
+        };
 
-        // On Tipe Change
-        $('#tipe').change(function() {
-            let selectedMerk = $('#merk').val();
-            let selectedTipe = $(this).val();
-            
-            if (selectedMerk && selectedTipe && dataMobil[selectedMerk][selectedTipe]) {
-                $('#jenis').val(dataMobil[selectedMerk][selectedTipe]);
-            } else {
-                $('#jenis').val('');
-            }
+        $(document).ready(function () {
+            // Populate Merk
+            $.each(dataMobil, function (merk, types) {
+                $('#merk').append(new Option(merk, merk));
+            });
+
+            // On Merk Change
+            $('#merk').change(function () {
+                let selectedMerk = $(this).val();
+                let tipeSelect = $('#tipe');
+                let jenisInput = $('#jenis');
+
+                tipeSelect.empty().append(new Option("-- Pilih Tipe --", ""));
+                jenisInput.val('');
+
+                if (selectedMerk && dataMobil[selectedMerk]) {
+                    $.each(dataMobil[selectedMerk], function (tipe, jenis) {
+                        tipeSelect.append(new Option(tipe, tipe));
+                    });
+                }
+            });
+
+            // On Tipe Change
+            $('#tipe').change(function () {
+                let selectedMerk = $('#merk').val();
+                let selectedTipe = $(this).val();
+
+                if (selectedMerk && selectedTipe && dataMobil[selectedMerk][selectedTipe]) {
+                    $('#jenis').val(dataMobil[selectedMerk][selectedTipe]);
+                } else {
+                    $('#jenis').val('');
+                }
+            });
         });
-    });
     </script>
 </body>
+
 </html>

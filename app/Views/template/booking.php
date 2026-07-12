@@ -38,7 +38,7 @@
   <!-- Spinner End -->
   <!-- Topbar Start -->
   <div class="container-fluid bg-light p-0">
-    <div class="row gx-0 d-flex flex-column flex-lg-row">
+    <div class="row gx-0 d-none d-lg-flex">
       <div class="col-lg-7 px-5 text-start">
         <div class="h-100 d-inline-flex align-items-center py-3 me-4">
           <small class="fa fa-map-marker-alt text-primary me-2"></small>
@@ -154,11 +154,13 @@
                       <?php endif; ?>
                     </select>
                     <div class="mt-2">
-                      <small class="text-muted">Mobil Anda tidak ada di daftar? 
+                      <small class="text-muted">Mobil Anda tidak ada di daftar?
                         <?php if (session()->get('loggedin')): ?>
-                          <a href="<?= site_url('/Mobil') ?>" class="text-primary fw-bold text-decoration-underline">Tambah Mobil Baru</a>
+                          <a href="<?= site_url('/Mobil') ?>"
+                            class="text-primary fw-bold text-decoration-underline">Tambah Mobil Baru</a>
                         <?php else: ?>
-                          <a href="<?= site_url('/?showLogin=true') ?>" class="text-primary fw-bold text-decoration-underline">Tambah Mobil Baru</a>
+                          <a href="<?= site_url('/?showLogin=true') ?>"
+                            class="text-primary fw-bold text-decoration-underline">Tambah Mobil Baru</a>
                         <?php endif; ?>
                       </small>
                     </div>

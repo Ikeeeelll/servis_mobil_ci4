@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -35,7 +36,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -44,7 +46,7 @@
 
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-flex flex-column flex-lg-row">
+        <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
@@ -61,8 +63,11 @@
                     <small>(0751) 7054654</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1"
+                        href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0"
+                        href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -149,40 +154,48 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="nama_pelanggan" name="nama_pelanggan" placeholder="Nama Lengkap" value="<?= esc($pelanggan['nama_pelanggan']) ?>" required>
+                                        <input type="text" class="form-control" id="nama_pelanggan"
+                                            name="nama_pelanggan" placeholder="Nama Lengkap"
+                                            value="<?= esc($pelanggan['nama_pelanggan']) ?>" required>
                                         <label for="nama_pelanggan">Nama Lengkap</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?= esc($pelanggan['email']) ?>" required>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Email" value="<?= esc($pelanggan['email']) ?>" required>
                                         <label for="email">Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="no_hp" name="no_hp" placeholder="Nomor HP" value="<?= esc($pelanggan['no_hp']) ?>" required>
+                                        <input type="text" class="form-control" id="no_hp" name="no_hp"
+                                            placeholder="Nomor HP" value="<?= esc($pelanggan['no_hp']) ?>" required>
                                         <label for="no_hp">Nomor HP</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Alamat" id="alamat" name="alamat" style="height: 100px" required><?= esc($pelanggan['alamat']) ?></textarea>
+                                        <textarea class="form-control" placeholder="Alamat" id="alamat" name="alamat"
+                                            style="height: 100px" required><?= esc($pelanggan['alamat']) ?></textarea>
                                         <label for="alamat">Alamat</label>
                                     </div>
                                 </div>
                                 <div class="col-12 mt-4">
-                                    <h5 class="mb-3 border-bottom pb-2 text-secondary">Ubah Password (Kosongkan jika tidak ingin diubah)</h5>
+                                    <h5 class="mb-3 border-bottom pb-2 text-secondary">Ubah Password (Kosongkan jika
+                                        tidak ingin diubah)</h5>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password Baru">
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Password Baru">
                                         <label for="password">Password Baru</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Konfirmasi Password Baru">
+                                        <input type="password" class="form-control" id="confirm_password"
+                                            name="confirm_password" placeholder="Konfirmasi Password Baru">
                                         <label for="confirm_password">Konfirmasi Password Baru</label>
                                     </div>
                                 </div>
@@ -207,8 +220,11 @@
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. S Parman No. 156 - 164 Padang</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(0751) 7054654</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">

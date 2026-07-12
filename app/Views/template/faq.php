@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="/theme/https://fonts.googleapis.com">
     <link rel="preconnect" href="/theme/https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,7 +35,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -44,7 +46,7 @@
 
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-flex flex-column flex-lg-row">
+        <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
@@ -61,8 +63,11 @@
                     <small>(0751) 7054654</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1"
+                        href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0"
+                        href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -118,11 +123,10 @@
 
             <div class="accordion" id="faqAccordion">
 
-                 <!-- FAQ 1 -->
+                <!-- FAQ 1 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                             1. Apakah saya perlu membuat janji sebelum datang ke bengkel?
                         </button>
                     </h2>
@@ -208,7 +212,8 @@
                     </h2>
                     <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Ya, kami memberikan garansi untuk jasa servis tertentu serta sparepart resmi sesuai ketentuan
+                            Ya, kami memberikan garansi untuk jasa servis tertentu serta sparepart resmi sesuai
+                            ketentuan
                             pabrik.
                         </div>
                     </div>
@@ -254,7 +259,8 @@
                     </h2>
                     <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Ya, kami buka setiap hari dari pukul 08.00 – 17.00, kecuali hari jumat ataupun hari libur nasional tertentu.
+                            Ya, kami buka setiap hari dari pukul 08.00 – 17.00, kecuali hari jumat ataupun hari libur
+                            nasional tertentu.
                         </div>
                     </div>
                 </div>
@@ -288,8 +294,8 @@
     <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        $(document).ready(function() {
-            $('#formBooking').submit(function(e) {
+        $(document).ready(function () {
+            $('#formBooking').submit(function (e) {
                 e.preventDefault(); // penting banget!
 
                 $.ajax({
@@ -297,7 +303,7 @@
                     type: "POST",
                     data: $(this).serialize(),
                     dataType: "json",
-                    success: function(res) {
+                    success: function (res) {
                         if (res.success) {
                             Swal.fire({
                                 icon: 'success',
@@ -323,7 +329,7 @@
                             });
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error(error);
                         Swal.fire({
                             icon: 'error',
@@ -340,44 +346,47 @@
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-    <!-- Alamat -->
-    <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Alamat</h4>
-        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. S Parman No. 156 - 164 Padang</p>
-        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(0751) 7054654</p>
-        <div class="d-flex pt-2">
-             <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
+                <!-- Alamat -->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Alamat</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. S Parman No. 156 - 164 Padang</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(0751) 7054654</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
 
-    <!-- Jam Buka -->
-    <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Buka</h4>
-        <h6 class="text-light">Senin – Kamis :</h6>
-        <p class="mb-4">08.00 AM – 17.00 PM</p>
-        <h6 class="text-light">Sabtu – Minggu :</h6>
-        <p class="mb-0">08.00 AM – 17.00 PM</p>
-    </div>
+                <!-- Jam Buka -->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Buka</h4>
+                    <h6 class="text-light">Senin – Kamis :</h6>
+                    <p class="mb-4">08.00 AM – 17.00 PM</p>
+                    <h6 class="text-light">Sabtu – Minggu :</h6>
+                    <p class="mb-0">08.00 AM – 17.00 PM</p>
+                </div>
 
-    <!-- Servis -->
-    <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Servis</h4>
-        <a class="btn btn-link" href="/Home/layanan">Tes Diagnostik</a>
-        <a class="btn btn-link" href="/Home/layanan">Servis Mesin</a>
-        <a class="btn btn-link" href="/Home/layanan">Penggantian Ban</a>
-        <a class="btn btn-link" href="/Home/layanan">Penggantian Oli</a>
-        <a class="btn btn-link" href="/Home/layanan">Pembersihan Vakum</a>
-    </div>
+                <!-- Servis -->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Servis</h4>
+                    <a class="btn btn-link" href="/Home/layanan">Tes Diagnostik</a>
+                    <a class="btn btn-link" href="/Home/layanan">Servis Mesin</a>
+                    <a class="btn btn-link" href="/Home/layanan">Penggantian Ban</a>
+                    <a class="btn btn-link" href="/Home/layanan">Penggantian Oli</a>
+                    <a class="btn btn-link" href="/Home/layanan">Pembersihan Vakum</a>
+                </div>
 
-    <!-- Kolom Baru: Dukungan -->
-    <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Dukungan & Bantuan</h4>
-        <a class="btn btn-link" href="/Home/tentang">Tentang Kami</a>
-        <a class="btn btn-link" href="/Home/faq">FAQ</a>
-        <a class="btn btn-link" href="/Booking">Booking Servis</a>
-    </div>
-</div>
+                <!-- Kolom Baru: Dukungan -->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Dukungan & Bantuan</h4>
+                    <a class="btn btn-link" href="/Home/tentang">Tentang Kami</a>
+                    <a class="btn btn-link" href="/Home/faq">FAQ</a>
+                    <a class="btn btn-link" href="/Booking">Booking Servis</a>
+                </div>
+            </div>
 
         </div>
         <div class="container">
@@ -420,7 +429,7 @@
 
     <?= $this->include('template/modal_login'); ?>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('showLogin') === 'true') {
                 var modalLogin = new bootstrap.Modal(document.getElementById('modalLogin'));

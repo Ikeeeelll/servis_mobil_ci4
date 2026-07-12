@@ -12,7 +12,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="/theme/https://fonts.googleapis.com">
     <link rel="preconnect" href="/theme/https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -31,10 +32,12 @@
             border-radius: 15px;
             overflow: hidden;
         }
+
         .sparepart-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
+
         .sparepart-card .card-img-top {
             height: 180px;
             object-fit: cover;
@@ -43,21 +46,25 @@
             align-items: center;
             justify-content: center;
         }
+
         .sparepart-card .card-img-top i {
             font-size: 4rem;
             color: white;
         }
+
         .badge-stock {
             position: absolute;
             top: 10px;
             right: 10px;
             font-size: 0.8rem;
         }
+
         .price-tag {
             font-size: 1.2rem;
             font-weight: 700;
             color: #d63384;
         }
+
         .search-box {
             max-width: 400px;
             margin: 0 auto 30px;
@@ -67,16 +74,17 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
-    
+
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-flex flex-column flex-lg-row">
+        <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
@@ -93,14 +101,17 @@
                     <small>(0751) 7054654</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1"
+                        href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0"
+                        href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Topbar End -->
-    
+
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="<?= site_url('/') ?>" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -121,7 +132,7 @@
                         <a href="<?= site_url('/Home/status') ?>" class="dropdown-item">Status Servis</a>
                         <a href="<?= site_url('/Home/layanan') ?>" class="dropdown-item">Jenis Servis</a>
                     </div>
-                 </div>
+                </div>
                 <?php if (session()->get('loggedin')): ?>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -141,7 +152,8 @@
     <!-- Navbar End -->
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 py-5" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/theme/img/carousel-bg-1.jpg'); background-size: cover; background-position: center;">
+    <div class="container-fluid page-header mb-5 py-5"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/theme/img/carousel-bg-1.jpg'); background-size: cover; background-position: center;">
         <div class="container text-center py-5">
             <h1 class="display-4 text-white animated slideInDown mb-3">Katalog Sparepart</h1>
             <nav aria-label="breadcrumb animated slideInDown">
@@ -177,27 +189,29 @@
                         <div class="card sparepart-card shadow-sm h-100 position-relative">
                             <!-- Stock Badge -->
                             <?php if ($item['stok'] > 0): ?>
-                                <span class="badge bg-success badge-stock">Stok: <?= $item['stok'] ?> <?= $item['satuan'] ?></span>
+                                <span class="badge bg-success badge-stock">Stok: <?= $item['stok'] ?>             <?= $item['satuan'] ?></span>
                             <?php else: ?>
                                 <span class="badge bg-danger badge-stock">Habis</span>
                             <?php endif; ?>
-                            
+
                             <!-- Foto Sparepart -->
                             <?php if (!empty($item['foto'])): ?>
-                                <img src="<?= base_url('uploads/sparepart/' . $item['foto']) ?>" class="card-img-top" alt="<?= esc($item['nama_sparepart']) ?>" style="height: 180px; object-fit: contain; background: white; padding: 10px;">
+                                <img src="<?= base_url('uploads/sparepart/' . $item['foto']) ?>" class="card-img-top"
+                                    alt="<?= esc($item['nama_sparepart']) ?>"
+                                    style="height: 180px; object-fit: contain; background: white; padding: 10px;">
                             <?php else: ?>
                                 <div class="card-img-top">
                                     <i class="fas fa-cogs"></i>
                                 </div>
                             <?php endif; ?>
-                            
+
                             <div class="card-body text-center">
                                 <h5 class="card-title fw-bold mb-2"><?= esc($item['nama_sparepart']) ?></h5>
                                 <p class="text-muted small mb-1 no-parts-text"><?= esc($item['no_parts'] ?? '-') ?></p>
                                 <p class="text-muted small mb-2"><?= esc($item['satuan']) ?></p>
                                 <p class="price-tag mb-0">Rp <?= number_format($item['harga_jual'], 0, ',', '.') ?></p>
                             </div>
-                            
+
                             <div class="card-footer bg-white border-0 text-center pb-3">
                                 <?php if ($item['stok'] > 0): ?>
                                     <span class="badge bg-primary px-3 py-2">
@@ -227,9 +241,11 @@
                 <div class="bg-light p-4 rounded-3 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row align-items-center">
                         <div class="col-lg-8">
-                            <h4 class="fw-bold mb-2"><i class="fas fa-info-circle text-primary me-2"></i>Informasi Pembelian</h4>
+                            <h4 class="fw-bold mb-2"><i class="fas fa-info-circle text-primary me-2"></i>Informasi
+                                Pembelian</h4>
                             <p class="mb-0 text-muted">
-                                Untuk melakukan pembelian sparepart, silakan kunjungi langsung bengkel kami atau hubungi kami melalui telepon di <strong>(0751) 7054654</strong>. 
+                                Untuk melakukan pembelian sparepart, silakan kunjungi langsung bengkel kami atau hubungi
+                                kami melalui telepon di <strong>(0751) 7054654</strong>.
                                 Tim kami akan membantu Anda menemukan sparepart yang tepat untuk kendaraan Anda.
                             </p>
                         </div>
@@ -255,8 +271,11 @@
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. S Parman No. 156 - 164 Padang</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(0751) 7054654</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -305,10 +324,10 @@
         </div>
     </div>
     <!-- Footer End -->
-    
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -323,13 +342,13 @@
 
     <!-- Template Javascript -->
     <script src="/theme/js/main.js"></script>
-    
+
     <!-- Search Script -->
     <script>
-        $(document).ready(function() {
-            $('#searchSparepart').on('keyup', function() {
+        $(document).ready(function () {
+            $('#searchSparepart').on('keyup', function () {
                 var value = $(this).val().toLowerCase();
-                $('.sparepart-item').filter(function() {
+                $('.sparepart-item').filter(function () {
                     var title = $(this).find('.card-title').text().toLowerCase();
                     var noParts = $(this).find('.no-parts-text').text().toLowerCase();
                     $(this).toggle(title.indexOf(value) > -1 || noParts.indexOf(value) > -1);

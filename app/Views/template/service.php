@@ -12,7 +12,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="/theme/https://fonts.googleapis.com">
     <link rel="preconnect" href="/theme/https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -28,7 +29,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -36,7 +38,7 @@
     <!-- Spinner End -->
     <!-- Topbar Start -->
     <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-flex flex-column flex-lg-row">
+        <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-map-marker-alt text-primary me-2"></small>
@@ -53,8 +55,11 @@
                     <small>(0751) 7054654</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1"
+                        href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-0"
+                        href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -80,7 +85,7 @@
                         <a href="<?= site_url('/Home/status') ?>" class="dropdown-item">Status Servis</a>
                         <a href="<?= site_url('/Home/layanan') ?>" class="dropdown-item active">Jenis Servis</a>
                     </div>
-                 </div>
+                </div>
                 <?php if (session()->get('loggedin')): ?>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -107,19 +112,16 @@
         <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
             <!-- LIST TAB DINAMIS -->
             <div class="col-lg-4">
-                <div class="nav w-100 nav-pills me-4"
-                    style="max-height: 450px; overflow-y: auto; padding-right: 10px;">
+                <div class="nav w-100 nav-pills me-4" style="max-height: 450px; overflow-y: auto; padding-right: 10px;">
                     <?php $i = 1;
                     foreach ($servis as $index => $row): ?>
                         <button
                             class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 <?= $i == 1 ? 'active' : '' ?>"
-                            data-bs-toggle="pill"
-                            data-bs-target="#tab-pane-<?= $i ?>"
-                            type="button">
+                            data-bs-toggle="pill" data-bs-target="#tab-pane-<?= $i ?>" type="button">
                             <i class="fa fa-tools fa-2x me-3"></i>
                             <h4 class="m-0"><?= esc($row['nama_servis']) ?></h4>
                         </button>
-                    <?php $i++;
+                        <?php $i++;
                     endforeach; ?>
                 </div>
             </div>
@@ -133,8 +135,7 @@
                                 <!-- GAMBAR DEFAULT OTOMATIS -->
                                 <div class="col-md-6">
                                     <img class="img-fluid w-100 h-100"
-                                        src="/theme/img/service-<?= ($i <= 22 ? $i : 1) ?>.jpg"
-                                        style="object-fit: cover;">
+                                        src="/theme/img/service-<?= ($i <= 22 ? $i : 1) ?>.jpg" style="object-fit: cover;">
                                 </div>
                                 <div class="col-md-6">
                                     <h3 class="mb-3"><?= esc($row['nama_servis']) ?></h3>
@@ -147,7 +148,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php $i++;
+                        <?php $i++;
                     endforeach; ?>
                 </div>
             </div>
@@ -166,8 +167,11 @@
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. S Parman No. 156 - 164 Padang</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(0751) 7054654</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/16Vd6P3VMo/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.instagram.com/utamaservice_padang?igsh=MTB4eG5ya3doOTZ6cQ=="><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
