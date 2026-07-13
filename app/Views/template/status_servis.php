@@ -164,7 +164,9 @@
                             <h4 class="fw-bold mb-3 text-primary">Status Servis</h4>
                             <?php if ($servis['status'] == 'selesai servis'): ?>
                                 <div class="alert alert-success fs-5">
-                                    <i class="fa fa-check-circle me-2"></i> Servis Selesai/Menunggu Pembayaran
+                                    <i class="fa fa-check-circle me-2"></i> Servis sudah selesai dilakukan oleh mekanik <strong><?= isset($transaksi['nama_mekanik']) ? $transaksi['nama_mekanik'] : '-' ?></strong>
+                                    <br>
+                                    <i class="fa fa-money-bill-wave me-2 mt-2"></i> Kendaraan sudah bisa dijemput dengan jumlah pembayaran <br> <strong>Rp <?= isset($transaksi['total_biaya']) ? number_format($transaksi['total_biaya'], 0, ',', '.') : '0' ?></strong>
                                 </div>
                             <?php elseif ($servis['status'] == 'selesai'): ?>
                                 <div class="alert alert-success fs-5">

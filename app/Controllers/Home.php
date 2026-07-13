@@ -48,6 +48,18 @@ class Home extends BaseController
             }
             $data['servis'] = $servis;
             $data['is_detail'] = true;
+
+            // Ambil data transaksi servis (nama mekanik & total biaya) jika status selesai servis
+            if ($servis['status'] == 'selesai servis' || $servis['status'] == 'selesai') {
+                $db = \Config\Database::connect();
+                $transaksi = $db->table('transaksi_servis')
+                    ->select('transaksi_servis.total_biaya, mekanik.nama_mekanik')
+                    ->join('mekanik', 'mekanik.id_mekanik = transaksi_servis.id_mekanik', 'left')
+                    ->where('transaksi_servis.id_pemesanan', $servis['id_pemesanan'])
+                    ->get()->getRowArray();
+                $data['transaksi'] = $transaksi;
+            }
+
             return view('template/status_servis', $data);
         }
 
