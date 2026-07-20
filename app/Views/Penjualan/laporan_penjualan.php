@@ -4,31 +4,29 @@
 <div class="container">
 
     <!-- HEADER -->
-<div class="header mb-4 position-relative">
-    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
-        <!-- LOGO KIRI -->
-        <div class="logo-container">
-            <img src="<?= base_url('assets/dist/img/logouss.png') ?>" 
-                 alt="Logo" 
-                 style="width: 70px; height: auto;">
-        </div>
+    <div class="header mb-4 position-relative">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <!-- LOGO KIRI -->
+            <div class="logo-container">
+                <img src="<?= base_url('assets/dist/img/logouss.png') ?>" alt="Logo" style="width: 70px; height: auto;">
+            </div>
 
-        <!-- TEKS HEADER (TENGAH) -->
-        <div class="text-center flex-grow-1">
-            <h3 class="fw-bold mb-1 text-uppercase">UTAMA SERVICE STATION</h3>
-            <p style="font-size: 14px; margin-bottom: 0;">
-                Jl. S. Parman No.156 Padang
-            </p>
-            <p style="font-size: 13px; margin-bottom: 0;">
-                Telp: (0751) 7054654 / 7052123
-            </p>
+            <!-- TEKS HEADER (TENGAH) -->
+            <div class="text-center flex-grow-1">
+                <h3 class="fw-bold mb-1 text-uppercase">UTAMA SERVICE STATION</h3>
+                <p style="font-size: 14px; margin-bottom: 0;">
+                    Jl. S. Parman No.156 Padang
+                </p>
+                <p style="font-size: 13px; margin-bottom: 0;">
+                    Telp: (0751) 7054654 / 7052123
+                </p>
 
-            <h4 class="fw-bold text-decoration-underline mt-3" style="font-size: 16px;">
-                LAPORAN PENJUALAN
-            </h4>
+                <h4 class="fw-bold text-decoration-underline mt-3" style="font-size: 16px;">
+                    LAPORAN PENJUALAN
+                </h4>
+            </div>
         </div>
     </div>
-</div>
 
     <!-- INFORMASI TANGGAL DAN PENCETAK -->
     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -47,104 +45,107 @@
         </div>
     </div>
 
-   <!-- FILTER PENJUALAN -->
-<form action="<?= base_url('Penjualansparepart/filterPenjualan') ?>" method="get" class="filter-bar bg-light p-3 rounded shadow-sm mb-4">
+    <!-- FILTER PENJUALAN -->
+    <form action="<?= base_url('Penjualansparepart/filterPenjualan') ?>" method="get"
+        class="filter-bar bg-light p-3 rounded shadow-sm mb-4">
 
-    <div class="row align-items-end g-3">
+        <div class="row align-items-end g-3">
 
-        <div class="col-md-2">
-            <label class="form-label fw-semibold small text-secondary mb-1">Tanggal Mulai</label>
-            <input type="date" name="tanggal_mulai" class="form-control form-control-sm" 
-                   value="<?= esc($tanggal_mulai ?? '') ?>">
+            <div class="col-md-2">
+                <label class="form-label fw-semibold small text-secondary mb-1">Tanggal Mulai</label>
+                <input type="date" name="tanggal_mulai" class="form-control form-control-sm"
+                    value="<?= esc($tanggal_mulai ?? '') ?>">
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label fw-semibold small text-secondary mb-1">Tanggal Akhir</label>
+                <input type="date" name="tanggal_akhir" class="form-control form-control-sm"
+                    value="<?= esc($tanggal_akhir ?? '') ?>">
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label fw-semibold small text-secondary mb-1">Pelanggan</label>
+                <select name="pelanggan" class="form-select form-select-sm">
+                    <option value="">-- Semua Pelanggan --</option>
+                    <?php foreach ($pelanggan as $p): ?>
+                        <option value="<?= $p['id_pelanggan'] ?>" <?= (isset($pelanggan_terpilih) && $pelanggan_terpilih == $p['id_pelanggan']) ? 'selected' : '' ?>>
+                            <?= esc($p['nama_pelanggan']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label fw-semibold small text-secondary mb-1">Periode</label>
+                <select name="periode" class="form-select form-select-sm">
+                    <option value="">-- Semua Transaksi --</option>
+                    <option value="hari" <?= ($periode ?? '') == 'hari' ? 'selected' : '' ?>>Hari Ini</option>
+                    <option value="bulan" <?= ($periode ?? '') == 'bulan' ? 'selected' : '' ?>>Bulan Ini</option>
+                    <option value="tahun" <?= ($periode ?? '') == 'tahun' ? 'selected' : '' ?>>Tahun Ini</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 d-flex justify-content-end gap-2">
+                <button type="submit" class="btn btn-primary btn-sm shadow-sm" title="Filter Data">
+                    <i class="fa-solid fa-filter"></i>
+                </button>
+                <button type="button" class="btn btn-success btn-sm shadow-sm" onclick="window.print()"
+                    title="Cetak Laporan">
+                    <i class="fa-solid fa-print"></i>
+                </button>
+                <a href="<?= base_url('Penjualansparepart/laporan') ?>" class="btn btn-secondary btn-sm shadow-sm"
+                    title="Reset Filter">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </a>
+            </div>
+
         </div>
-
-        <div class="col-md-2">
-            <label class="form-label fw-semibold small text-secondary mb-1">Tanggal Akhir</label>
-            <input type="date" name="tanggal_akhir" class="form-control form-control-sm" 
-                   value="<?= esc($tanggal_akhir ?? '') ?>">
-        </div>
-
-        <div class="col-md-2">
-            <label class="form-label fw-semibold small text-secondary mb-1">Pelanggan</label>
-            <select name="pelanggan" class="form-select form-select-sm">
-                <option value="">-- Semua Pelanggan --</option>
-                <?php foreach ($pelanggan as $p): ?>
-                    <option value="<?= $p['id_pelanggan'] ?>" <?= (isset($pelanggan_terpilih) && $pelanggan_terpilih == $p['id_pelanggan']) ? 'selected' : '' ?>>
-                        <?= esc($p['nama_pelanggan']) ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-
-        <div class="col-md-2">
-            <label class="form-label fw-semibold small text-secondary mb-1">Periode</label>
-            <select name="periode" class="form-select form-select-sm">
-                <option value="">-- Semua Transaksi --</option>
-                <option value="hari" <?= ($periode ?? '') == 'hari' ? 'selected' : '' ?>>Hari Ini</option>
-                <option value="bulan" <?= ($periode ?? '') == 'bulan' ? 'selected' : '' ?>>Bulan Ini</option>
-                <option value="tahun" <?= ($periode ?? '') == 'tahun' ? 'selected' : '' ?>>Tahun Ini</option>
-            </select>
-        </div>
-
-        <div class="col-md-2 d-flex justify-content-end gap-2">
-            <button type="submit" class="btn btn-primary btn-sm shadow-sm" title="Filter Data">
-                <i class="fa-solid fa-filter"></i>
-            </button>
-            <button type="button" class="btn btn-success btn-sm shadow-sm" onclick="window.print()" title="Cetak Laporan">
-                <i class="fa-solid fa-print"></i>
-            </button>
-            <a href="<?= base_url('Penjualansparepart/laporan') ?>" class="btn btn-secondary btn-sm shadow-sm" title="Reset Filter">
-                <i class="fa-solid fa-arrows-rotate"></i>
-            </a>
-        </div>
-
-    </div>
-</form>
+    </form>
 
 
     <!-- TABEL DATA PENJUALAN -->
     <div class="table-responsive">
-    <table class="table table-bordered table-striped align-middle">
-        <thead class="bg-dark text-white text-center">
-            <tr>
-                <th>No</th>
-                <th>ID Penjualan</th>
-                <th>Tanggal</th>
-                <th>Pelanggan</th>
-                <th>Sparepart</th>
-                <th>Harga Jual</th>
-                <th>Jumlah</th>
-                <th>Subtotal (Rp)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($dataPenjualan)): ?>
-                <?php $no = 1;
-                foreach ($dataPenjualan as $row): 
-                    ?>
-                    
-                    <tr>
-                        <td class="text-center"><?= $no++; ?></td>
-                        <td class="text-center"><?= esc($row['id_penjualan']) ?></td>
-                        <td class="text-center"><?= date('d-m-Y', strtotime($row['tanggal_penjualan'])) ?></td>
-                        <td><?= esc($row['nama_pelanggan']) ?></td>
-                        <td><?= esc($row['nama_sparepart']) ?></td>
-                        <td class="text-end"><?= number_format($row['harga_jual'], 0, ',', '.') ?></td>
-                        <td class="text-center"><?= esc($row['jumlah_jual']) ?></td>
-                        <td class="text-end"><?= number_format($row['subtotal'], 0, ',', '.') ?></td>
-                    </tr>
-                <?php endforeach; ?>
-                <tr class="table-info">
-                <td colspan="7" class="text-end"><strong>Total </strong></td>
-                <td class="text-end"><strong>Rp <?= number_format($total_keseluruhan, 0, ',', '.') ?></strong></td>
-                </tr>
-            <?php else: ?>
+        <table class="table table-bordered table-striped align-middle">
+            <thead class="bg-dark text-white text-center">
                 <tr>
-                    <td colspan="8" class="text-center">Tidak ada data penjualan.</td>
+                    <th>No</th>
+                    <th>Kode </th>
+                    <th>Tanggal</th>
+                    <th>Pelanggan</th>
+                    <th>Sparepart</th>
+                    <th>Harga Jual</th>
+                    <th>Jumlah</th>
+                    <th>Subtotal (Rp)</th>
                 </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php if (!empty($dataPenjualan)): ?>
+                    <?php $no = 1;
+                    foreach ($dataPenjualan as $row):
+                        ?>
+
+                        <tr>
+                            <td class="text-center"><?= $no++; ?></td>
+                            <td class="text-center"><?= esc($row['kode_penjualan']) ?></td>
+                            <td class="text-center"><?= date('d-m-Y', strtotime($row['tanggal_penjualan'])) ?></td>
+                            <td><?= esc($row['nama_pelanggan']) ?></td>
+                            <td><?= esc($row['nama_sparepart']) ?></td>
+                            <td class="text-end"><?= number_format($row['harga_jual'], 0, ',', '.') ?></td>
+                            <td class="text-center"><?= esc($row['jumlah_jual']) ?></td>
+                            <td class="text-end"><?= number_format($row['subtotal'], 0, ',', '.') ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <tr class="table-info">
+                        <td colspan="7" class="text-end"><strong>Total </strong></td>
+                        <td class="text-end"><strong>Rp <?= number_format($total_keseluruhan, 0, ',', '.') ?></strong></td>
+                    </tr>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="8" class="text-center">Tidak ada data penjualan.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </div>
 
     <!-- BAGIAN TANDA TANGAN -->
@@ -160,6 +161,7 @@
 <!-- STYLE TAMBAHAN -->
 <style>
     @media print {
+
         .print-btn,
         form,
         header,
@@ -185,7 +187,8 @@
         }
     }
 
-    th, td {
+    th,
+    td {
         vertical-align: middle !important;
     }
 
@@ -201,46 +204,51 @@
     form label {
         font-size: 13px;
     }
+
     .filter-bar {
-    border: 1px solid #dee2e6;
-}
-.text-end { text-align: right !important; }
-.filter-bar .form-control-sm,
-.filter-bar .form-select-sm {
-    height: 32px !important;
-    padding: 4px 8px !important;
-    font-size: 13px !important;
-}
-
-.filter-bar label {
-    margin-bottom: 4px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #555;
-}
-
-.filter-bar .btn {
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.filter-bar .btn i {
-    font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    .filter-bar .row > div {
-        flex: 0 0 100%;
-        max-width: 100%;
+        border: 1px solid #dee2e6;
     }
-    .filter-bar .d-flex {
-        justify-content: flex-start !important;
-    }
-}
 
+    .text-end {
+        text-align: right !important;
+    }
+
+    .filter-bar .form-control-sm,
+    .filter-bar .form-select-sm {
+        height: 32px !important;
+        padding: 4px 8px !important;
+        font-size: 13px !important;
+    }
+
+    .filter-bar label {
+        margin-bottom: 4px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #555;
+    }
+
+    .filter-bar .btn {
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-bar .btn i {
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .filter-bar .row>div {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .filter-bar .d-flex {
+            justify-content: flex-start !important;
+        }
+    }
 </style>
 
 <?= $this->endSection() ?>

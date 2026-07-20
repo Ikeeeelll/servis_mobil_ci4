@@ -76,6 +76,7 @@ class Penjualansparepart extends Controller
         $tgl = date('Ymd');
         $query = $this->db->table('penjualan')
             ->select('RIGHT(kode_penjualan, 4) as kode', false)
+            ->like('kode_penjualan', 'PJN-' . $tgl)
             ->orderBy('id_penjualan', 'DESC')
             ->limit(1)
             ->get();

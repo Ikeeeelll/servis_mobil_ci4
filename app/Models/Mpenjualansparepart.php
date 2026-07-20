@@ -62,6 +62,7 @@ class Mpenjualansparepart extends Model
         return $this->db->table('penjualan')
                         ->select('
                             penjualan.id_penjualan,
+                            penjualan.kode_penjualan,
                             penjualan.tanggal_penjualan,
                             pelanggan.nama_pelanggan,
                             sparepart.nama_sparepart,
