@@ -304,7 +304,7 @@
   <script>
     $(document).ready(function () {
       $('#formBooking').submit(function (e) {
-        e.preventDefault(); // penting banget!
+        e.preventDefault(); 
 
         $.ajax({
           url: "<?= site_url('/Booking/simpan') ?>",
